@@ -1,0 +1,43 @@
+#img {
+    height: 200px;
+
+}
+
+.text-justify{
+    text-align: left;
+    color: rgb(122, 122, 122);
+}
+
+#font-st {
+    font-size: small;
+
+}
+
+.cardr{
+    border-radius: 30px;
+}
+.footer {
+    margin-top: 40px;
+}
+
+.footer p{
+    font-size: 9px;
+    color: #acacac;
+}
+
+@media (min-width:992px) {
+    #img {
+        height: 400px;
+    
+    } 
+
+    #font-st {
+        font-size: medium;
+        
+    }
+
+    .footer p{
+        font-size: 13px;
+        color: #acacac;
+    }
+}
