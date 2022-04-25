@@ -39,9 +39,9 @@ add_chart
                     {{ $item->Harga }}
                 </td>
                 <td>
-                   <form action="#" method="POST" class="btn-group">
-                       <a href="#" class="btn d-flex align-items-center gap-2"><span class="material-icons">edit</span>Edit</a>
-                       <button class="btn d-flex align-items-center gap-2" onclick="return confirm('Yakin hapus data ?')"><span class="material-icons">delete</span>Hapus</button>
+                   <form action="#" method="POST" class="btn-group gap-2">
+                       <a href="#" class="btn d-flex align-items-center gap-2 btn-outline-dark rounded-pill"><span class="material-icons">edit</span>Edit</a>
+                       <button class="btn d-flex align-items-center gap-2 btn-outline-danger rounded-pill" onclick="return confirm('Yakin hapus data ?')"><span class="material-icons">delete</span>Hapus</button>
                    </form>
                 </td>
             </tr>

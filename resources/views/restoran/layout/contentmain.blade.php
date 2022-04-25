@@ -20,8 +20,11 @@
         <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2"  href="/pesanan"><span class="material-icons">list_alt</span>Pesanan</a>
         </li>
-        <li class="nav-item center">
+        <li class="nav-item">
           <a class="nav-link d-flex align-items-center gap-2" href="/user"><span class="material-icons">people</span> User</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-2 text-danger" href="/"><span class="material-icons">logout</span> Logout</a>
         </li>
        
       </ul>

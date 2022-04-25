@@ -6,7 +6,7 @@
 
     <div class="container">
     <div class="text-end m-3">
-    <a href="#" class="btn d-flex align-items-center gap-2"><span class="material-icons">person_add</span>Tambah User</a>
+    <a href="/registrasi" class="btn d-flex align-items-center gap-2"><span class="material-icons">person_add</span>Tambah User</a>
     </div>
 <div class="table-responsive">
     <table class="table">
@@ -36,9 +36,9 @@
                     {{ $item->level }}
                 </td>
                 <td>
-                   <form action="#" method="POST" class="btn-group">
-                       <a href="#" class="btn d-flex align-items-center gap-2"><span class="material-icons">edit</span>Edit</a>
-                       <button class="btn d-flex align-items-center gap-2" onclick="return confirm('Yakin hapus data ?')"><span class="material-icons">delete</span>Hapus</button>
+                   <form action="#" method="POST" class="btn-group gap-2">
+                       <a href="#" class="btn d-flex align-items-center gap-2 btn-outline-dark rounded-pill"><span class="material-icons">edit</span>Edit</a>
+                       <button class="btn d-flex align-items-center gap-2  btn-outline-danger rounded-pill" onclick="return confirm('Yakin hapus data ?')"><span class="material-icons">delete</span>Hapus</button>
                    </form>
                 </td>
             </tr>

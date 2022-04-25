@@ -24,6 +24,10 @@ Route::get('/login', function () {
     return view('restoran/login/login');
 });
 
+Route::get('/registrasi', function () {
+    return view('restoran/login/registrasi');
+});
+
 Route::resource('/user',UserController::class);
 Route::resource('/menu',MenuController::class);
 
