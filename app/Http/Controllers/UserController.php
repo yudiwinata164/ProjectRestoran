@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+    return view('restoran/user/tambahdata');
     }
 
     /**
@@ -38,7 +38,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate(
+            [
+                'name'=> 'required',
+                'email'=> 'required|unique:users',
+                'password'=>'required',
+                'level'=>'required',
+            ]
+            );
+
+            User::create($validatedData);
+            return redirect('/user')->with('Sukses', 'Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -60,7 +70,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('restoran/user/editdata',[
+            'user'=>User::find($id),
+        ]);
     }
 
     /**
@@ -72,7 +84,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $rules =[
+            'name'=> 'required',
+            'password'=>'required',
+            'level'=>'required',
+        ];
+
+        if($request->email != $user->email){
+            $rules['email'] = 'required|unique:users';
+        }
+        $validatedData =  $request->validate($rules);
+
+        User::where('id', $id)->update($validatedData);
+        return redirect('/user')->with('Sukses', 'Data Berhasil Ditambahkan!');
     }
 
     /**
@@ -83,6 +109,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect('/user')->with('Sukses', 'Data Berhasil Dihapus!');
     }
 }

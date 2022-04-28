@@ -25,6 +25,34 @@
     color: #acacac;
 }
 
+.radio{
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+}
+
+.radio_input{
+    display: none;
+}
+
+.radio_label{
+    padding: 5px 14px;
+    color: #707071;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.radio_label:not(:last-of-type){
+    border-right: 1px solid #ced4da;
+}
+
+.radio_input:checked + .radio_label{
+    background: #212529;
+    color: white;
+}
+
+
 @media (min-width:992px) {
     #img {
         height: 400px;

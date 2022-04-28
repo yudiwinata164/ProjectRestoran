@@ -13,8 +13,8 @@
 <form action="/user" method="POST">
   @csrf
   <div class="mb-2">
-      <label for="">Name</label>
-      <input type="text" name="name" placeholder="Masukkan Nama" class="form-control rounded-pill @error('name') is-invalid @enderror">
+      <label for="">Nama</label>
+      <input type="text" name="name" placeholder="Masukkan Nama" class="form-control rounded-pill @error('name') is-invalid @enderror" value="{{ old('name') }}">
       @error('name')
       <div class="invalid-feedback">
           {{ $message }}
@@ -23,7 +23,7 @@
   </div>
   <div class="mb-2">
       <label for="">Email</label>
-      <input type="email" name="email" placeholder="Masukkan Email" class="form-control rounded-pill @error('email') is-invalid @enderror">
+      <input type="email" name="email" placeholder="Masukkan Email" class="form-control rounded-pill @error('email') is-invalid @enderror" value="{{ old('email') }}">
       @error('email')
       <div class="invalid-feedback">
           {{ $message }}
@@ -32,7 +32,7 @@
   </div>
   <div class="mb-2">
       <label for="">Password</label>
-      <input type="password" name="password" placeholder="Masukkan Password" class="form-control rounded-pill @error('password') is-invalid @enderror">
+      <input type="password" name="password" placeholder="Masukkan Password" class="form-control rounded-pill @error('password') is-invalid @enderror" value="{{ old('password') }}">
       @error('password')
       <div class="invalid-feedback">
           {{ $message }}
@@ -40,13 +40,15 @@
       @enderror
   </div>
   <div class="mb-2">
-      <label for="">Level</label>
-      <input type="level" name="level" placeholder="Masukkan Level" class="form-control rounded-pill @error('level') is-invalid @enderror">
-      @error('level')
-      <div class="invalid-feedback">
-          {{ $message }}
-      </div>
-      @enderror
+    <label for="">Jenis Akun</label>
+    <br>
+    <div class="radio">
+        <input class="radio_input @error('level') is-invalid @enderror" type="radio" id="kitchen" name="level" value="kitchen">
+        <label class="radio_label" for="kitchen">Kitchen</label>
+
+        <input class="radio_input @error('level') is-invalid @enderror" type="radio" id="waiter" name="level" value="waiter">
+        <label class="radio_label" for="waiter">Waiter</label>
+    </div>
   </div>
   <button class="btn btn-outline-dark rounded-pill mt-3">Tambah</button>
   <a href="/user" class="btn btn-outline-danger rounded-pill mt-3">Kembali</a>

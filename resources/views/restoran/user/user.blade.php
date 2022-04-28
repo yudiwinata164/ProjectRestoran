@@ -5,8 +5,14 @@
 
 
     <div class="container">
+        @if (session()->has('Sukses'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('Sukses') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        @endif
     <div class="text-end m-3">
-    <a href="/registrasi" class="btn d-flex align-items-center gap-2"><span class="material-icons">person_add</span>Tambah User</a>
+    <a href="/user/create" class="btn d-flex align-items-center gap-2"><span class="material-icons">person_add</span>Tambah User</a>
     </div>
 <div class="table-responsive">
     <table class="table">
@@ -35,9 +41,12 @@
                 <td>
                     {{ $item->level }}
                 </td>
-                <td>
-                   <form action="#" method="POST" class="btn-group gap-2">
-                       <a href="#" class="btn d-flex align-items-center gap-2 btn-outline-dark rounded-pill"><span class="material-icons">edit</span>Edit</a>
+                <td class="d-flex gap-2">
+                    <a href="/user/{{$item->id}}/edit" class="btn d-flex align-items-center gap-2 btn-outline-dark rounded-pill"><span class="material-icons">edit</span>Edit</a>
+
+                   <form action="/user/{{ $item->id }}" method="POST" class="btn-group">
+                       @method('delete')
+                       @csrf
                        <button class="btn d-flex align-items-center gap-2  btn-outline-danger rounded-pill" onclick="return confirm('Yakin hapus data ?')"><span class="material-icons">delete</span>Hapus</button>
                    </form>
                 </td>
